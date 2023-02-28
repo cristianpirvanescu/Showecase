@@ -1,0 +1,286 @@
+﻿@{
+    ViewData["Title"] = "Movie details";
+}
+@model ShowcaseRoot
+<div class="text-center">
+    <h1 class="display-4">Movie details</h1>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <h3 style="color:red">@ViewBag.ErrorMessage</h3>
+    }
+    <div class="row gx-3">
+        <div class="col-12">
+            <div class="card mb-2">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Headline)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Headline)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Sgid)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Sgid)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Sum)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Sum)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.SkyGoId)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.SkyGoId)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Body)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Body)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Cert)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Cert)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Class)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Class)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Duration)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Duration)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Genres)
+                    </div>
+                    <div class="col-md-9">
+                        @string.Join(", ", Model.Genres)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Id)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Id)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.LastUpdated)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.LastUpdated)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Quote)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Quote)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Rating)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Rating)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.ReviewAuthor)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.ReviewAuthor)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.SgUrl)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.SgUrl)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.SkyGoUrl)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.SkyGoUrl)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Synopsis)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Synopsis)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Url)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Url)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Year)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.DisplayFor(model => model.Year)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Directors)
+                    </div>
+                    <div class="col-md-9">
+                        @string.Join(", ", Model.Directors.SelectMany(q=>q.Name))
+                    </div>
+                </div>
+                @if (Model.ViewingWindow != null)
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.ViewingWindow.EndDate)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ViewingWindow.EndDate)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.ViewingWindow.Title)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ViewingWindow.Title)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.ViewingWindow.StartDate)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ViewingWindow.StartDate)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.ViewingWindow.WayToWatch)
+                        </div>
+                        <div class="col-md-9">
+                            @Html.DisplayFor(model => model.ViewingWindow.WayToWatch)
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.CardImages)
+                    </div>
+                    <div class="col-md-9">
+                        @if (Model.CardImages != null)
+                        {
+                            @foreach (var item in Model.CardImages.Where(q => !string.IsNullOrEmpty(q.Url)))
+                            {
+                                <img src="@Url.Content(@item.Url)" width="50" height="60">
+                            }
+                        }
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Galleries)
+                        </div>
+                        <div class="col-md-9">
+                            @if (Model.Galleries != null)
+                            {
+                                @foreach (var item in Model.Galleries.Where(q => !string.IsNullOrEmpty(q.Url)))
+                                {
+                                    <img src="@Url.Content(@item.Url)" title="@item.Title" width="50" height="60">
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.KeyArtImages)
+                        </div>
+                        <div class="col-md-9">
+                            @if (Model.KeyArtImages != null)
+                            {
+                                @foreach (var item in Model.KeyArtImages.Where(q => !string.IsNullOrEmpty(q.Url)))
+                                {
+                                    <img src="@Url.Content(@item.Url)" width="50" height="60">
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Videos)
+                        </div>
+                        <div class="col-md-9">
+                            @if (Model.Videos != null)
+                            {
+                                @foreach (var item in Model.Videos.Where(q => !string.IsNullOrEmpty(q.Url)))
+                                {
+                                    <video width="320" height="240" controls>
+                                        <source src="@Url.Content(@item.Url)">
+                                    </video>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Videos alternatives</label>
+                        </div>
+                        <div class="col-md-9">
+                            @if (Model.Videos != null)
+                            {
+                                @foreach (var item in Model.Videos.Where(q=>q.Alternatives != null).SelectMany(w => w.Alternatives).Where(q => !string.IsNullOrEmpty(q.Url)))
+                                {
+                                    <video width="320" height="240" controls>
+                                        <source src="@Url.Content(@item.Url)">
+                                    </video>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

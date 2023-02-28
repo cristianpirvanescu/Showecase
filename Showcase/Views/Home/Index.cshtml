@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Movies list";
+}
+@model List<ShowcaseRoot>
+<div class="text-center">
+    <h1 class="display-4">Movies list</h1>
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <h3 style="color:red">@ViewBag.ErrorMessage</h3>
+    }
+    <div class="row gx-3">        
+        <div class="col-12">
+            @foreach (var movie in Model)
+            {
+                <div class="card mb-2">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h5 class="card-text">@movie.Headline</h5>
+                        </div>
+                        <div class="col-md-3">
+                            @Html.ActionLink("Details", "Details", new { id = movie.Id }, new { @class = "btn btn-primary", @style = "color:white" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+       
+    </div>
+</div>
